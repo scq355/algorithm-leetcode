@@ -1,4 +1,4 @@
-package com.summary.algorithm.simlpe;
+package com.summary.algorithm.easy;
 
 /**
  * 实现 strStr() 函数。

@@ -1,4 +1,4 @@
-package com.summary.algorithm.simlpe;
+package com.summary.algorithm.easy;
 
 import java.util.ArrayList;
 import java.util.Collections;
