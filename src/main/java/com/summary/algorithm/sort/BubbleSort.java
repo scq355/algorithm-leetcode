@@ -5,13 +5,23 @@ package com.summary.algorithm.sort;
  */
 public class BubbleSort {
 
+    public static void main(String[] args) {
+        Integer[] array_start = new Integer[] {12, 2, 23, 3, 13, 4, 43, 10, 6, 79};
+        BubbleSort.bubbleSortI(array_start);
+        BubbleSort.bubbleSortII(array_start);
+        BubbleSort.bubbleSortIII(array_start);
+        for (Integer num : array_start) {
+            System.out.print(num + " ");
+        }
+    }
+
     /**
      * 设数组长度为N。
      * 1．比较相邻的前后二个数据，如果前面数据大于后面的数据，就将二个数据交换。
      * 2．这样对数组的第0个数据到N-1个数据进行一次遍历后，最大的一个数据就“沉”到数组第N-1个位置。
      * 3．N=N-1，如果N不为0就重复前面二步，否则排序完成。
      */
-    public static void bubbleSortI(Integer[] array) {
+    private static void bubbleSortI(Integer[] array) {
         for (int i = 0; i < array.length; i++) {
             for (int j = 1; j < array.length - 1; j++) {
                 if (array[j - 1] > array[j]) {
@@ -28,7 +38,7 @@ public class BubbleSort {
      * 下面对其进行优化，设置一个标志，如果这一趟发生了交换，则为true，否则为false。明显如果有一
      * 趟没有发生交换，说明排序已经完成
      */
-    public static void bubbleSortII(Integer[] array) {
+    private static void bubbleSortII(Integer[] array) {
         boolean flag = true;
         int count = array.length;
         while (flag) {
@@ -49,7 +59,7 @@ public class BubbleSort {
      * 那么在第一趟遍历后，最后发生交换的位置必定小于10，且这个位置之后的数据必定已经有序了，记录下这
      * 位置，第二次只要从数组头部遍历到这个位置就可以了。
      */
-    public static void bubbleSortIII(Integer[] array) {
+    private static void bubbleSortIII(Integer[] array) {
         int flag = array.length;
         int count;
         while (flag > 0) {

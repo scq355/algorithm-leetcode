@@ -5,6 +5,16 @@ package com.summary.algorithm.sort;
  */
 public class ShellSort {
 
+    public static void main(String[] args) {
+        Integer[] array_start = new Integer[] {12, 2, 23, 3, 13, 4, 43, 10, 6, 79};
+        ShellSort.shellSort(array_start);
+        ShellSort.shellSortII(array_start);
+        ShellSort.shellSortIII(array_start);
+        for (Integer num : array_start) {
+            System.out.print(num + " ");
+        }
+    }
+
     /**
      * 先将整个待排元素序列分割成若干个子序列（由相隔某个“增量”的元素组成的）分别进行直接插入排序，
      * 然后依次缩减增量再进行排序，待整个序列中的元素基本有序（增量足够小）时，

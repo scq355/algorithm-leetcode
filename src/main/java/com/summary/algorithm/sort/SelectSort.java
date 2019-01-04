@@ -5,6 +5,14 @@ package com.summary.algorithm.sort;
  */
 public class SelectSort {
 
+    public static void main(String[] args) {
+        Integer[] array_start = new Integer[] {12, 2, 23, 3, 13, 4, 43, 10, 6, 79};
+        SelectSort.selectSort(array_start);
+        for (Integer num : array_start) {
+            System.out.print(num + " ");
+        }
+    }
+
     /**
      * 设数组为a[0…n-1]。
      * 1.初始时，数组全为无序区为a[0..n-1]。令i=0

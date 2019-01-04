@@ -5,7 +5,15 @@ package com.summary.algorithm.sort;
  */
 public class HeapSort {
 
-    public static void sort(Integer[] array){
+    public static void main(String[] args) {
+        Integer[] array_start = new Integer[] {12, 2, 23, 3, 13, 4, 43, 10, 6, 79};
+        HeapSort.sort(array_start);
+        for (Integer num : array_start) {
+            System.out.print(num + " ");
+        }
+    }
+
+    private static void sort(Integer[] array){
         // 1.构建大顶堆
         for(int i = array.length / 2 - 1;i >= 0; i--){
             // 从第一个非叶子结点从下至上，从右至左调整结构
@@ -22,7 +30,7 @@ public class HeapSort {
     /**
      * 调整大顶堆（仅是调整过程，建立在大顶堆已构建的基础上）
      */
-    public static void adjustHeap(Integer[] array,int i,int length){
+    private static void adjustHeap(Integer[] array,int i,int length){
         Integer temp = array[i]; // 先取出当前元素i
         for(int k = i * 2 + 1; k < length; k = k * 2 + 1) { // 从i结点的左子结点开始，也就是2i+1处开始
             if(k + 1 < length && array[k] < array[k + 1]){ // 如果左子结点小于右子结点，k指向右子结点
@@ -41,7 +49,7 @@ public class HeapSort {
     /**
      * 交换元素
      */
-    public static void swap(Integer[] array,int a ,int b){
+    private static void swap(Integer[] array,int a ,int b){
         int temp = array[a];
         array[a] = array[b];
         array[b] = temp;

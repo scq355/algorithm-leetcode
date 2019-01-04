@@ -5,6 +5,14 @@ package com.summary.algorithm.sort;
  */
 public class QuickSort {
 
+    public static void main(String[] args) {
+        Integer[] array_start = new Integer[] {12, 2, 23, 3, 13, 4, 43, 10, 6, 79};
+        QuickSort.quickSort(array_start, 0, array_start.length - 1);
+        for (Integer num : array_start) {
+            System.out.print(num + " ");
+        }
+    }
+
     /**
      * @param left  左指针
      * @param right 右指针

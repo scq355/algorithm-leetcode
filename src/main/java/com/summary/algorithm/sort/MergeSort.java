@@ -5,10 +5,19 @@ package com.summary.algorithm.sort;
  */
 public class MergeSort {
 
+    public static void main(String[] args) {
+        Integer[] array_start = new Integer[] {12, 2, 23, 3, 13, 4, 43, 10, 6, 79};
+        MergeSort.sort(array_start);
+        for (Integer num : array_start) {
+            System.out.print(num + " ");
+        }
+    }
+
     public static void sort(Integer []arr){
         Integer []temp = new Integer[arr.length];//在排序前，先建好一个长度等于原数组长度的临时数组，避免递归中频繁开辟空间
         sort(arr,0,arr.length-1,temp);
     }
+
     private static void sort(Integer[] arr,int left,int right,Integer []temp){
         if(left<right){
             int mid = (left+right)/2;
@@ -17,6 +26,7 @@ public class MergeSort {
             merge(arr,left,mid,right,temp);//将两个有序子数组合并操作
         }
     }
+
     private static void merge(Integer[] arr,int left,int mid,int right,Integer[] temp){
         int i = left;//左序列指针
         int j = mid+1;//右序列指针
